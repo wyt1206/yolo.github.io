@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="en" dir="auto" data-theme="auto">
+
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=60693&amp;path=livereload" data-no-instant defer></script><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="robots" content="noindex, nofollow">
+<title>I Didn&#39;t Understand State Machines Until I Asked These 5 Questions | Many WHYs</title>
+<meta name="keywords" content="">
+<meta name="description" content="Recently, I spent some time learning about State Machines (FSMs).
+At first, every explanation sounded the same:
+✅ State
+✅ Event
+✅ Transition
+But I kept asking myself:
+Isn’t this just a state transition flow?
+After digging deeper, I finally understood what makes State Machines important.
+⸻
+
+What is a State Machine?
+
+In one sentence:
+Current State &#43; Event = Next State
+For example, in an order system:
+Pending Payment → Paid → Shipped → Delivered">
+<meta name="author" content="">
+<link rel="canonical" href="http://localhost:60693/posts/state-machine/">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.6ff46447b1fa3f8a5cc0bcae48088decc3ae37f5fbc99406a3aefc3bf0e6044a.css" integrity="sha256-b/RkR7H6P4pcwLyuSAiN7MOuN/X7yZQGo678O/DmBEo=" rel="preload stylesheet" as="style">
+<link rel="icon" href="http://localhost:60693/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="http://localhost:60693/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="http://localhost:60693/favicon-32x32.png">
+<link rel="apple-touch-icon" href="http://localhost:60693/apple-touch-icon.png">
+<link rel="mask-icon" href="http://localhost:60693/safari-pinned-tab.svg">
+<meta name="theme-color" content="#2e2e33">
+<meta name="msapplication-TileColor" content="#2e2e33">
+<link rel="alternate" hreflang="en" href="http://localhost:60693/posts/state-machine/">
+<noscript>
+    <style>
+        #theme-toggle,
+        .top-link {
+            display: none;
+        }
+
+    </style>
+    <style>
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --theme: rgb(29, 30, 32);
+                --entry: rgb(46, 46, 51);
+                --primary: rgb(218, 218, 219);
+                --secondary: rgb(155, 156, 157);
+                --tertiary: rgb(65, 66, 68);
+                --content: rgb(196, 196, 197);
+                --code-block-bg: rgb(46, 46, 51);
+                --code-bg: rgb(55, 56, 62);
+                --border: rgb(51, 51, 51);
+                color-scheme: dark;
+            }
+
+            .list {
+                background: var(--theme);
+            }
+
+            .toc {
+                background: var(--entry);
+            }
+        }
+
+    </style>
+</noscript>
+<script>
+    if (localStorage.getItem("pref-theme") === "dark") {
+        document.querySelector("html").dataset.theme = 'dark';
+    } else if (localStorage.getItem("pref-theme") === "light") {
+       document.querySelector("html").dataset.theme = 'light';
+    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        document.querySelector("html").dataset.theme = 'dark';
+    } else {
+        document.querySelector("html").dataset.theme = 'light';
+    }
+
+</script>
+</head>
+<body id="top">
+    <header class="header">
+    <nav class="header-nav">
+        <div class="logo">
+            <a href="http://localhost:60693/" accesskey="h" title="Many WHYs (Alt + H)">Many WHYs</a>
+            <div class="logo-switches">
+                <button id="theme-toggle" class="theme-toggle" accesskey="t" title="(Alt + T)" aria-label="Toggle theme">
+                    <svg class="moon" xmlns="http://www.w3.org/2000/svg" width="17" height="17" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                    <svg class="sun" xmlns="http://www.w3.org/2000/svg" width="17" height="17" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                </button>
+            </div>
+        </div>
+        <ul id="menu" class="menu">
+        </ul>
+    </nav>
+</header>
+<main class="main">
+
+<article class="post-single">
+  <header class="post-header">
+    
+    <h1 class="post-title entry-hint-parent">
+      I Didn&#39;t Understand State Machines Until I Asked These 5 Questions
+    </h1>
+    <div class="post-meta">
+
+<span title='2026-06-10 00:00:00 +0000 UTC'>June 10, 2026</span>
+
+</div>
+  </header> 
+  <div class="post-content md-content"><p>Recently, I spent some time learning about State Machines (FSMs).</p>
+<p>At first, every explanation sounded the same:</p>
+<p>✅ State</p>
+<p>✅ Event</p>
+<p>✅ Transition</p>
+<p>But I kept asking myself:</p>
+<p>Isn’t this just a state transition flow?</p>
+<p>After digging deeper, I finally understood what makes State Machines important.</p>
+<p>⸻</p>
+<ol>
+<li>What is a State Machine?</li>
+</ol>
+<p>In one sentence:</p>
+<p>Current State + Event = Next State</p>
+<p>For example, in an order system:</p>
+<p>Pending Payment → Paid → Shipped → Delivered</p>
+<p>When:</p>
+<p>Current State = Pending Payment</p>
+<p>Event = Payment Success</p>
+<p>Result:</p>
+<p>State becomes Paid</p>
+<p>Simple enough.</p>
+<p>⸻</p>
+<ol start="2">
+<li>Why is it called a “State Machine”?</li>
+</ol>
+<p>My first thought was:</p>
+<p>Isn’t this just a flowchart?</p>
+<p>Not exactly.</p>
+<p>A flowchart describes:</p>
+<p>“What’s the next step?”</p>
+<p>A state machine describes:</p>
+<p>“What’s the current state, and what transitions are allowed?”</p>
+<p>Example:</p>
+<p>Pending Payment
+├─ Payment Success → Paid
+└─ Cancel → Cancelled</p>
+<p>The focus isn’t the process.</p>
+<p>The focus is:</p>
+<p>Only legal state transitions are allowed.</p>
+<p>That’s why it’s called a State Machine, not a State Diagram.</p>
+<p>⸻</p>
+<ol start="3">
+<li>But Flowcharts Can Have Conditions Too!</li>
+</ol>
+<p>This was the question that confused me the most.</p>
+<p>Eventually I realized:</p>
+<p>Flowcharts focus on:</p>
+<p>👉 How tasks are executed</p>
+<p>State Machines focus on:</p>
+<p>👉 How states change</p>
+<p>Flowchart:</p>
+<p>Start
+↓
+Decision
+↓
+Action A
+↓
+Action B</p>
+<p>State Machine:</p>
+<p>Pending Payment
+↓ Payment Success
+Paid
+↓ Ship
+Shipped</p>
+<p>Flowcharts manage execution paths.</p>
+<p>State Machines manage system states.</p>
+<p>⸻</p>
+<ol start="4">
+<li>What’s the Difference Between a State Machine and if-else?</li>
+</ol>
+<p>Here’s the surprising part:</p>
+<p>A State Machine is often implemented using if-else statements.</p>
+<p>Example:</p>
+<p>if state == “Pending Payment” and event == “Payment Success”:
+state = “Paid”</p>
+<p>So what’s the difference?</p>
+<p>if-else:</p>
+<p>Rules are scattered across code.</p>
+<p>State Machine:</p>
+<p>Rules are organized into a model.</p>
+<p>The logic becomes visible and easier to reason about.</p>
+<p>⸻</p>
+<ol start="5">
+<li>Why Do We Need State Machines Then?</li>
+</ol>
+<p>Because complexity grows faster than we think.</p>
+<p>Imagine a game character:</p>
+<p>Standing
+Running
+Jumping
+Attacking
+Stunned
+Dead</p>
+<p>And events such as:</p>
+<p>Press Attack
+Press Jump
+Take Damage
+Health Reaches Zero</p>
+<p>Soon you’ll start asking:</p>
+<p>Can a dead character attack?</p>
+<p>Can a stunned character jump?</p>
+<p>What happens if damage is received while jumping?</p>
+<p>At that point, you’re no longer writing features.</p>
+<p>You’re maintaining a huge transition table.</p>
+<p>That’s where State Machines become valuable.</p>
+<p>⸻</p>
+<ol start="6">
+<li>Why Didn’t State Machines Feel Important to Me?</li>
+</ol>
+<p>Because my systems weren’t complex enough.</p>
+<p>If you have:</p>
+<p>3 states</p>
+<p>5 events</p>
+<p>That’s only 15 combinations.</p>
+<p>Your brain can handle it.</p>
+<p>Simple if-else logic works perfectly fine.</p>
+<p>But what about:</p>
+<p>20 states</p>
+<p>30 events</p>
+<p>Potential combinations:</p>
+<p>20 × 30 = 600</p>
+<p>Now things become difficult to reason about.</p>
+<p>This is where State Machines start to shine.</p>
+<p>⸻</p>
+<ol start="7">
+<li>Do Large Systems Use One Huge State Machine?</li>
+</ol>
+<p>Actually, no.</p>
+<p>Because State Machines can suffer from something called:</p>
+<p>State Explosion</p>
+<p>For example:</p>
+<p>Movement States:</p>
+<p>Standing
+Running
+Jumping</p>
+<p>Weapon States:</p>
+<p>Unarmed
+Armed
+Reloading</p>
+<p>If you combine everything into one machine:</p>
+<p>Standing + Unarmed
+Standing + Armed
+Running + Armed
+Jumping + Reloading
+…</p>
+<p>The number of states explodes.</p>
+<p>⸻</p>
+<ol start="8">
+<li>How Do Real Systems Solve This?</li>
+</ol>
+<p>They split the problem.</p>
+<p>Instead of one giant state machine:</p>
+<p>MovementFSM</p>
+<p>WeaponFSM</p>
+<p>HealthFSM</p>
+<p>Each machine manages one concern.</p>
+<p>For example:</p>
+<p>Movement = Running</p>
+<p>Weapon = Armed</p>
+<p>Health = Healthy</p>
+<p>Together they describe the full situation.</p>
+<p>This is much easier to maintain.</p>
+<p>⸻</p>
+<ol start="9">
+<li>My Final Understanding</li>
+</ol>
+<p>State Machines are not necessary for making software run.</p>
+<p>Software can work perfectly fine without them.</p>
+<p>The real value is:</p>
+<p>Helping humans understand and manage complex behavior.</p>
+<p>Small systems:</p>
+<p>if-else is enough.</p>
+<p>Medium systems:</p>
+<p>Finite State Machines (FSMs).</p>
+<p>Large systems:</p>
+<p>Hierarchical State Machines + Multiple FSMs.</p>
+<p>Enterprise systems:</p>
+<p>Workflow Engines.</p>
+<p>⸻</p>
+<p>Final Takeaway</p>
+<p>State Machines are not for computers.</p>
+<p>Computers can execute if-else just fine.</p>
+<p>State Machines are for developers.</p>
+<p>They help answer three critical questions:</p>
+<p>• Where is the system right now?</p>
+<p>• What is allowed to happen next?</p>
+<p>• Which transitions are valid?</p>
+<p>That’s why State Machines become increasingly valuable as systems grow in complexity.</p>
+
+
+  </div>
+
+  <footer class="post-footer">
+    <ul class="post-tags">
+    </ul>
+  </footer>
+</article>
+    </main>
+    
+<footer class="footer">
+        <span>&copy; 2026 <a href="http://localhost:60693/">Many WHYs</a></span> · 
+
+    
+    
+    <span>
+        Powered by
+        <a href="https://gohugo.io/?utm_source=papermod" rel="noopener" target="_blank">Hugo</a> &
+        <a href="https://github.com/adityatelange/hugo-PaperMod/" rel="noopener" target="_blank">PaperMod</a>
+    </span>
+</footer>
+<a href="#top" id="top-link" class="top-link hidden" aria-label="go to top" title="Go to Top (Alt + G)" accesskey="g">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+        stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevrons-up">
+        <polyline points="17 11 12 6 7 11"></polyline>
+        <polyline points="17 18 12 13 7 18"></polyline>
+    </svg>
+</a>
+
+<script>
+    let menu = document.getElementById('menu');
+    if (menu) {
+        
+        const scrollPosition = localStorage.getItem("menu-scroll-position");
+        if (scrollPosition) {
+            menu.scrollLeft = parseInt(scrollPosition, 10);
+        }
+        
+        menu.onscroll = function () {
+            localStorage.setItem("menu-scroll-position", menu.scrollLeft);
+        }
+    }
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            var id = this.getAttribute("href").substr(1);
+            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
+                    behavior: "smooth"
+                });
+            } else {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
+            }
+            if (id === "top") {
+                history.replaceState(null, null, " ");
+            } else {
+                history.pushState(null, null, `#${id}`);
+            }
+        });
+    });
+
+</script>
+<script>
+    var toplink = document.getElementById("top-link");
+    window.onscroll = function () {
+        const scrollThreshold = window.innerHeight;
+        if (document.body.scrollTop > scrollThreshold || document.documentElement.scrollTop > scrollThreshold) {
+            toplink.classList.remove("hidden");
+        } else {
+            toplink.classList.add("hidden");
+        }
+    };
+
+</script>
+<script>
+    document.getElementById("theme-toggle").addEventListener("click", () => {
+        const html = document.querySelector("html");
+        if (html.dataset.theme === "dark") {
+            html.dataset.theme = 'light';
+            localStorage.setItem("pref-theme", 'light');
+        } else {
+            html.dataset.theme = 'dark';
+            localStorage.setItem("pref-theme", 'dark');
+        }
+    })
+
+</script>
+</body>
+
+</html>

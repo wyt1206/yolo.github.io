@@ -1,0 +1,5 @@
+baseURL = 'https://yolo.github.io/'
+languageCode = 'en-us'
+title = 'Many WHYs'
+
+theme = 'PaperMod'
