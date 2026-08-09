@@ -1,7 +1,7 @@
 ---
 title: "CPU Cache: The Small Warehouse Inside the CPU"
 date: 2026-07-11
-draft: true
+draft: false
 tags:
   - CPU
   - Cache
@@ -11,7 +11,6 @@ tags:
 categories:
   - Many WHYs
 ---
-
 # CPU Cache: The Small Warehouse Inside the CPU
 
 When we write programs, we often think:
@@ -22,7 +21,6 @@ CPU executes instructions
 |
 v
 Memory provides data
-
 ```
 
 But modern CPUs are much faster than memory.
@@ -44,49 +42,65 @@ This leads to a chain of questions:
 What is CPU Cache?
 
 ```
+
     |
+
 ```
 
 Why does CPU need Cache?
 
 ```
+
     |
+
 ```
 
 Why isn't Cache as large as Memory?
 
 ```
+
     |
+
 ```
 
 Why do we have L1, L2, L3?
 
 ```
+
     |
+
 ```
 
 How does CPU find data?
 
 ```
+
     |
+
 ```
 
 What is Cache Miss?
 
 ```
+
     |
+
 ```
 
 Why does CPU load blocks instead of bytes?
 
 ```
+
     |
+
 ```
 
 Why is the block size 64 bytes?
 
 ```
+
     |
+
 ```
 
 Why don't we have L4 Cache?
@@ -104,27 +118,29 @@ The memory hierarchy looks like:
 ```
 
 ```
-          CPU Core
 
-             |
+    CPU Core
 
-          L1 Cache
+    |
 
-             |
+    L1 Cache
 
-          L2 Cache
+    |
 
-             |
+    L2 Cache
 
-          L3 Cache
+    |
 
-             |
+    L3 Cache
 
-        Main Memory
+    |
 
-             |
+    Main Memory
 
-           Disk
+    |
+
+    Disk
+
 ```
 
 ```
@@ -184,9 +200,11 @@ Consider:
 CPU
 
 ```
+
 |
 |
 v
+
 ```
 
 Memory
@@ -202,19 +220,25 @@ The CPU pipeline may become:
 Execute instruction
 
 ```
+
     |
+
 ```
 
 Request data
 
 ```
+
     |
+
 ```
 
 Wait for memory
 
 ```
+
     |
+
 ```
 
 Continue execution
@@ -290,7 +314,6 @@ SRAM is:
 - more expensive
 - larger in hardware area
 
-
 ---
 
 ## 2. Cache consumes more power
@@ -300,7 +323,6 @@ A huge cache would require:
 - more transistors
 - more energy
 - more CPU area
-
 
 ---
 
@@ -334,7 +356,6 @@ CPU needs:
 - extremely fast access
 - reasonable storage size
 - acceptable cost
-
 
 So cache is organized into levels.
 
@@ -425,10 +446,12 @@ Core 2
 L1
 
 ```
+
   |
   v
 
 L3 Cache
+
 ```
 
 ```
@@ -470,41 +493,51 @@ The process is:
 CPU requests address
 
 ```
+
     |
 
     v
+
 ```
 
 Check L1 Cache
 
 ```
+
     |
 
     v
+
 ```
 
 If missing
 
 ```
+
     |
 
     v
+
 ```
 
 Check L2
 
 ```
+
     |
 
     v
+
 ```
 
 Check L3
 
 ```
+
     |
 
     v
+
 ```
 
 Access Memory
@@ -583,7 +616,7 @@ Cache Miss:
 
 hundreds of cycles
 
-````
+```
 
 Therefore:
 
@@ -597,7 +630,7 @@ Suppose:
 
 ```c
 char x;
-````
+```
 
 Why not load:
 

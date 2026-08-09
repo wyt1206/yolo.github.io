@@ -1,7 +1,7 @@
 ---
 title: "Linux OOM Killer: How Does Linux Survive When Memory Runs Out?"
 date: 2026-07-17
-draft: true
+draft: false
 tags:
   - Linux
   - Memory Management
@@ -11,7 +11,6 @@ tags:
 categories:
   - Many WHYs
 ---
-
 # Linux OOM Killer: How Does Linux Survive When Memory Runs Out?
 
 Memory is one of the most important resources in an operating system.
@@ -49,38 +48,46 @@ The complete chain:
 Memory Pressure
 
 ```
+
     |
 
     v
+
 ```
 
 Memory Reclaim
 
 ```
+
     |
 
     v
+
 ```
 
 Reclaim Failed
 
 ```
+
     |
 
     v
+
 ```
 
 OOM Killer
 
 ```
+
     |
 
     v
+
 ```
 
 Kill Selected Process
 
-````
+```
 
 ---
 
@@ -100,7 +107,7 @@ A process requests:
 
 ```c
 malloc(1GB);
-````
+```
 
 But the kernel cannot provide enough memory.
 

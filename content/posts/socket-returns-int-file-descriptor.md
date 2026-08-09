@@ -1,7 +1,7 @@
 ---
 title: "Why Does socket() Return an Integer? Understanding File Descriptor in Linux"
 date: 2026-07-09
-draft: true
+draft: false
 tags:
   - Linux
   - Socket

@@ -1,7 +1,7 @@
 ---
 title: "Why Does Linux Separate User Mode and Kernel Mode?"
 date: 2026-07-13
-draft: true
+draft: false
 tags:
   - Linux
   - Kernel
@@ -11,14 +11,13 @@ tags:
 categories:
   - Many WHYs
 ---
-
 # Why Does Linux Separate User Mode and Kernel Mode?
 
 When we run a program:
 
 ```c
 printf("Hello Linux");
-````
+```
 
 it looks simple.
 

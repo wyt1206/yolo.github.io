@@ -1,7 +1,7 @@
 ---
 title: "Why Does Socket Programming Need htons()? Understanding Byte Order"
 date: 2026-08-08
-draft: true
+draft: false
 tags:
   - Linux
   - Socket
@@ -11,14 +11,13 @@ tags:
 categories:
   - Many WHYs
 ---
-
 # Why Does Socket Programming Need htons()? Understanding Byte Order
 
 When writing Linux socket programs, we often see:
 
 ```c
 server_addr.sin_port = htons(8080);
-````
+```
 
 Many beginners ask:
 

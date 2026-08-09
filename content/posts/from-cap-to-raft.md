@@ -1,7 +1,7 @@
 ---
 title: "From CAP to Raft: The Complete Reasoning Chain Behind Distributed Systems"
 date: 2026-07-07
-draft: true
+draft: false
 tags:
   - Distributed Systems
   - CAP
@@ -58,6 +58,7 @@ Why do we need Raft?
 Originally, applications ran on a single machine:
 
 ```
+
 ```
 
     Client
@@ -71,6 +72,7 @@ Originally, applications ran on a single machine:
    Database
 
 ```
+
 ```
 
 This model is simple.
@@ -93,6 +95,7 @@ A single machine has limited:
 When traffic increases, we need more machines:
 
 ```
+
 ```
 
     Load Balancer
@@ -102,6 +105,7 @@ When traffic increases, we need more machines:
     Server A       Server B
 
 ```
+
 ```
 
 This allows horizontal scaling.
@@ -115,6 +119,7 @@ A single server creates a single point of failure.
 If:
 
 ```
+
 ```
 
    Server
@@ -122,6 +127,7 @@ If:
     X
 
 ```
+
 ```
 
 the entire system becomes unavailable.
@@ -129,6 +135,7 @@ the entire system becomes unavailable.
 With multiple nodes:
 
 ```
+
 ```
 
     Load Balancer
@@ -138,6 +145,7 @@ With multiple nodes:
   Node A        Node B
 
 ```
+
 ```
 
 one node can fail while others continue serving requests.
@@ -172,6 +180,7 @@ However, replication introduces a new problem.
 Suppose we have two replicas:
 
 ```
+
 ```
 
     Client
@@ -185,6 +194,7 @@ Suppose we have two replicas:
     x = 10       x = 10
 
 ```
+
 ```
 
 A client writes:
@@ -298,6 +308,7 @@ Node A -------- Node B
   Network Partition
 
 ```
+
 ```
 
 A client sends:
@@ -637,6 +648,7 @@ x = 10
 Then replicates:
 
 ```
+
 ```
 
     Leader
@@ -646,6 +658,7 @@ Then replicates:
 Node B Node C Node D
 
 ```
+
 ```
 
 When a majority acknowledges:

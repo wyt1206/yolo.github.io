@@ -1,7 +1,7 @@
 ---
 title: "How Are Callbacks Registered? From Function Registration to Event-Driven Systems"
 date: 2026-07-16
-draft: true
+draft: false
 tags:
   - C++
   - Callback

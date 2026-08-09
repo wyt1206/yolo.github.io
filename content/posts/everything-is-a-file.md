@@ -1,7 +1,7 @@
 ---
 title: "How Does Linux Implement Everything Is a File?"
 date: 2026-07-12
-draft: true
+draft: false
 tags:
   - Linux
   - Kernel
@@ -11,7 +11,6 @@ tags:
 categories:
   - Many WHYs
 ---
-
 # How Does Linux Implement "Everything Is a File"?
 
 Many people have heard:
@@ -28,7 +27,6 @@ Memory
 Network
 Processes
 Devices
-
 ```
 
 into files?
@@ -46,17 +44,21 @@ The key abstraction is:
 Resource
 
 ```
+
 |
 
 v
+
 ```
 
 File Descriptor
 
 ```
+
 |
 
 v
+
 ```
 
 System Call Interface
@@ -144,17 +146,21 @@ Linux changed the model:
 Different Resources
 
 ```
+
     |
 
     v
+
 ```
 
 Common Kernel Abstraction
 
 ```
+
     |
 
     v
+
 ```
 
 File Descriptor Interface
@@ -282,22 +288,27 @@ Conceptually:
 Application
 
 ```
+
  |
 
  v
+
 ```
 
 read(fd)
 
 ```
+
  |
 
  v
+
 ```
 
 struct file
 
 ```
+
  |
 
  +----------------+
@@ -305,6 +316,7 @@ struct file
  |                |
 
  v                v
+
 ```
 
 file read()       socket receive()
@@ -363,13 +375,13 @@ The common abstraction:
 
 FD
 
-````
+```
 
 Example:
 
 ```c
 int fd = open("data.txt", O_RDONLY);
-````
+```
 
 or:
 

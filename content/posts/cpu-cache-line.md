@@ -1,7 +1,7 @@
 ---
 title: "CPU Cache Line: Why Does a 64-Byte Block Matter?"
 date: 2026-07-08
-draft: true
+draft: false
 tags:
   - CPU
   - Cache

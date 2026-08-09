@@ -1,6 +1,6 @@
 ---
 title: "What Really Happens When Linux Deletes a File?"
-date: 2026-08-08
+date: 2026-08-05
 draft: false
 tags:
   - Linux
@@ -13,7 +13,6 @@ tags:
 categories:
   - Many WHYs
 ---
-
 # What Really Happens When Linux Deletes a File?
 
 When we type:

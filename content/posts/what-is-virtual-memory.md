@@ -1,7 +1,7 @@
 ---
 title: "Virtual Memory Explained: From Address Translation to Huge Pages"
 date: 2026-07-19
-draft: true
+draft: false
 tags:
   - Linux
   - Virtual Memory

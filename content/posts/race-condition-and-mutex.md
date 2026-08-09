@@ -1,6 +1,6 @@
 ---
 title: "Why Can Multiple Threads Produce Wrong Results? From Race Condition to Mutex"
-date: 2026-08-08
+date: 2026-08-01
 draft: false
 tags:
   - Linux
@@ -13,7 +13,6 @@ tags:
 categories:
   - Many WHYs
 ---
-
 # Why Can Multiple Threads Produce Wrong Results? From Race Condition to Mutex
 
 Modern applications use multiple threads.
