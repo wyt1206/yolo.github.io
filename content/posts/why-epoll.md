@@ -1,7 +1,7 @@
 ---
 title: "Why Is epoll So Important? Why Do Nginx and Redis Depend on It?"
 date: 2026-07-15
-draft: true
+draft: false
 tags:
   - Linux
   - epoll

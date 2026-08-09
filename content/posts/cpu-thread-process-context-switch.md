@@ -1,7 +1,7 @@
 ---
 title: "How Do CPU, Process, Thread, Syscall, and Context Switch Work Together?"
-date: 2026-06-11
-draft: true
+date: 2026-06-15
+draft: false
 tags:
   - Linux
   - CPU
