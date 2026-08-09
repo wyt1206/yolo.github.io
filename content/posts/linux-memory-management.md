@@ -1,7 +1,7 @@
 ---
 title: "How Does Linux Manage Memory When Multiple Processes Use RAM?"
 date: 2026-07-18
-draft: true
+draft: false
 tags:
   - Linux
   - Memory Management
@@ -12,13 +12,7 @@ tags:
 categories:
   - Many WHYs
 ---
-```
 
----
-
-正文：
-
-```markdown
 # How Does Linux Manage Memory When Multiple Processes Use RAM?
 
 Modern systems run many processes at the same time.

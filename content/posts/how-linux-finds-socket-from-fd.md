@@ -1,7 +1,7 @@
 ---
 title: "How Does Linux Find the Real Socket From an Integer FD?"
 date: 2026-07-10
-draft: true
+draft: false
 tags:
   - Linux
   - File Descriptor
@@ -83,7 +83,7 @@ struct socket
 struct sock
 ```
 
-Let's understand each step.
+Each step in the lookup path is straightforward once the surrounding objects are identified.
 
 ---
 
@@ -535,7 +535,7 @@ read()
 
 # 8. The Complete Journey of read(fd)
 
-Let's put everything together.
+The complete lookup path can be summarized as follows.
 
 Application:
 

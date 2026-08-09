@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>ELF on Many WHYs</title><link>https://wyt1206.github.io/ManyWHYs/tags/elf/</link><description>Recent content in ELF on Many WHYs</description><generator>Hugo</generator><language>en-us</language><lastBuildDate>Wed, 22 Jul 2026 00:00:00 +0000</lastBuildDate><atom:link href="https://wyt1206.github.io/ManyWHYs/tags/elf/index.xml" rel="self" type="application/rss+xml"/><item><title>How Do Linux Commands Actually Work? From Terminal to Kernel</title><link>https://wyt1206.github.io/ManyWHYs/posts/how-linux-command-works/</link><pubDate>Wed, 22 Jul 2026 00:00:00 +0000</pubDate><guid>https://wyt1206.github.io/ManyWHYs/posts/how-linux-command-works/</guid><description>&lt;h1 id="how-do-linux-commands-actually-work-from-terminal-to-kernel">How Do Linux Commands Actually Work? From Terminal to Kernel&lt;/h1>
+&lt;p>Every Linux user types commands:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>ls
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>or:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>lsof
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>or:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>netstat
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>It feels like:&lt;/p>
+&lt;pre tabindex="0">&lt;code>Command
+ |
+ v
+Linux
+&lt;/code>&lt;/pre>&lt;p>But the real execution chain is:&lt;/p>
+&lt;pre tabindex="0">&lt;code>Keyboard
+
+↓
+
+Terminal
+
+↓
+
+Shell
+
+↓
+
+Command Program
+
+↓
+
+ELF Loader
+
+↓
+
+Process
+
+↓
+
+System Call
+
+↓
+
+Kernel
+
+↓
+
+Hardware
+&lt;/code>&lt;/pre>&lt;p>The question:&lt;/p>
+&lt;blockquote>
+&lt;p>Who actually executes a Linux command?&lt;/p>&lt;/blockquote>
+&lt;hr>
+&lt;h1 id="1-when-we-type-ls-what-happens">1. When We Type ls, What Happens?&lt;/h1>
+&lt;p>The command begins with a user keystroke:&lt;/p></description></item></channel></rss>

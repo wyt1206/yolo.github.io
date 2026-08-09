@@ -1,7 +1,7 @@
 ---
 title: "How Does CPU Find the Next Instruction? Understanding Fetch and Cache"
 date: 2026-07-23
-draft: true
+draft: false
 tags:
   - CPU
   - Computer Architecture
@@ -11,9 +11,6 @@ tags:
   - ISA
 categories:
   - Many WHYs
----
-```
-
 ---
 
 # How Does CPU Find the Next Instruction? Understanding Fetch and Cache

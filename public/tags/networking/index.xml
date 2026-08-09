@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Networking on Many WHYs</title><link>https://wyt1206.github.io/ManyWHYs/tags/networking/</link><description>Recent content in Networking on Many WHYs</description><generator>Hugo</generator><language>en-us</language><lastBuildDate>Wed, 15 Jul 2026 00:00:00 +0000</lastBuildDate><atom:link href="https://wyt1206.github.io/ManyWHYs/tags/networking/index.xml" rel="self" type="application/rss+xml"/><item><title>Why Is epoll So Important? Why Do Nginx and Redis Depend on It?</title><link>https://wyt1206.github.io/ManyWHYs/posts/why-epoll/</link><pubDate>Wed, 15 Jul 2026 00:00:00 +0000</pubDate><guid>https://wyt1206.github.io/ManyWHYs/posts/why-epoll/</guid><description>&lt;h1 id="why-is-epoll-so-important-why-do-nginx-and-redis-depend-on-it">Why Is epoll So Important? Why Do Nginx and Redis Depend on It?&lt;/h1>
+&lt;p>A high-performance server usually needs to handle thousands or millions of connections.&lt;/p>
+&lt;p>Examples:&lt;/p>
+&lt;ul>
+&lt;li>Nginx&lt;/li>
+&lt;li>Redis&lt;/li>
+&lt;li>Node.js&lt;/li>
+&lt;li>Netty&lt;/li>
+&lt;/ul>
+&lt;p>A simple question:&lt;/p>
+&lt;blockquote>
+&lt;p>If thousands of clients connect at the same time, how does one server know which socket has data?&lt;/p>&lt;/blockquote>
+&lt;p>This leads to:&lt;/p>
+&lt;pre tabindex="0">&lt;code>
+Socket
+
+|
+
+v
+
+I/O Multiplexing
+
+|
+
+v
+
+epoll
+
+|
+
+v
+
+Event Loop
+&lt;/code>&lt;/pre>&lt;hr>
+&lt;h1 id="1-why-does-a-tcp-server-need-io-multiplexing">1. Why Does a TCP Server Need I/O Multiplexing?&lt;/h1>
+&lt;p>A simple server shows the bottleneck directly.&lt;/p></description></item></channel></rss>

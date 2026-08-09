@@ -1,7 +1,7 @@
 ---
 title: "What Is a Callback? Why Do epoll, ThreadPool, and Async Programming Need It?"
 date: 2026-07-14
-draft: true
+draft: false
 tags:
   - C++
   - Callback
@@ -85,9 +85,9 @@ This handler is called:
 
 # 1. Why Do Programs Need Callbacks?
 
-Let's start with a simple example.
+A simple example explains the problem clearly.
 
-Imagine a server:
+A server may do this:
 
 ```cpp
 read(socket);

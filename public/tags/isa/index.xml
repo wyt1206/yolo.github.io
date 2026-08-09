@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>ISA on Many WHYs</title><link>https://wyt1206.github.io/ManyWHYs/tags/isa/</link><description>Recent content in ISA on Many WHYs</description><generator>Hugo</generator><language>en-us</language><lastBuildDate>Thu, 23 Jul 2026 00:00:00 +0000</lastBuildDate><atom:link href="https://wyt1206.github.io/ManyWHYs/tags/isa/index.xml" rel="self" type="application/rss+xml"/><item><title>How Does CPU Find the Next Instruction? Understanding Fetch and Cache</title><link>https://wyt1206.github.io/ManyWHYs/posts/how-cpu-fetches-next-instruction/</link><pubDate>Thu, 23 Jul 2026 00:00:00 +0000</pubDate><guid>https://wyt1206.github.io/ManyWHYs/posts/how-cpu-fetches-next-instruction/</guid><description>&lt;h1 id="how-does-cpu-find-the-next-instruction-understanding-fetch-and-cache">How Does CPU Find the Next Instruction? Understanding Fetch and Cache&lt;/h1>
+&lt;p>Every program eventually becomes:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-text" data-lang="text">&lt;span style="display:flex;">&lt;span>Machine Instructions
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>For example:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-c" data-lang="c">&lt;span style="display:flex;">&lt;span>a &lt;span style="color:#f92672">=&lt;/span> b &lt;span style="color:#f92672">+&lt;/span> c;
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>becomes:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-text" data-lang="text">&lt;span style="display:flex;">&lt;span>ADD instruction
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>But an important question:&lt;/p>
+&lt;blockquote>
+&lt;p>How does CPU know which instruction to execute next?&lt;/p>&lt;/blockquote>
+&lt;p>The answer involves:&lt;/p>
+&lt;ul>
+&lt;li>Program Counter&lt;/li>
+&lt;li>Instruction Fetch&lt;/li>
+&lt;li>Cache&lt;/li>
+&lt;li>Memory Hierarchy&lt;/li>
+&lt;/ul>
+&lt;hr>
+&lt;h1 id="1-what-stages-does-an-instruction-go-through">1. What Stages Does An Instruction Go Through?&lt;/h1>
+&lt;p>A CPU does not simply:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-text" data-lang="text">&lt;span style="display:flex;">&lt;span>Read instruction
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>↓
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>Execute
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Modern CPUs use pipelines.&lt;/p></description></item><item><title>From CPU Hardware to Operating System: A Complete Execution Chain</title><link>https://wyt1206.github.io/ManyWHYs/posts/from-hardware-to-os-execution-chain/</link><pubDate>Mon, 20 Jul 2026 00:00:00 +0000</pubDate><guid>https://wyt1206.github.io/ManyWHYs/posts/from-hardware-to-os-execution-chain/</guid><description>&lt;h1 id="from-cpu-hardware-to-operating-system-a-complete-execution-chain">From CPU Hardware to Operating System: A Complete Execution Chain&lt;/h1>
+&lt;p>When we run:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>./server
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>many layers start working together.&lt;/p>
+&lt;p>Most developers only see:&lt;/p>
+&lt;pre tabindex="0">&lt;code>Application
+&lt;/code>&lt;/pre>&lt;p>but underneath:&lt;/p>
+&lt;pre tabindex="0">&lt;code>Application
+
+↓
+
+Library
+
+↓
+
+System Call
+
+↓
+
+Operating System
+
+↓
+
+CPU
+
+↓
+
+Hardware Circuit
+&lt;/code>&lt;/pre>&lt;p>The question:&lt;/p>
+&lt;blockquote>
+&lt;p>How does a piece of code finally become electrical signals inside CPU?&lt;/p>&lt;/blockquote>
+&lt;hr>
+&lt;h1 id="1-the-big-picture">1. The Big Picture&lt;/h1>
+&lt;p>A computer system can be divided into layers:&lt;/p>
+&lt;pre tabindex="0">&lt;code>Application
+
+ |
+ v
+
+Operating System
+
+ |
+ v
+
+Instruction Set Architecture (ISA)
+
+ |
+ v
+
+CPU Microarchitecture
+
+ |
+ v
+
+Digital Circuit
+
+ |
+ v
+
+Transistors
+&lt;/code>&lt;/pre>&lt;p>Each layer hides complexity from the layer above.&lt;/p></description></item></channel></rss>

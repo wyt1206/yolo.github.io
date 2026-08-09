@@ -1,34 +1,379 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
-  <channel>
-    <title>Posts on Many WHYs</title>
-    <link>http://localhost:1313/posts/</link>
-    <description>Recent content in Posts on Many WHYs</description>
-    <generator>Hugo</generator>
-    <language>en-us</language>
-    <lastBuildDate>Wed, 10 Jun 2026 00:00:00 +0000</lastBuildDate>
-    <atom:link href="http://localhost:1313/posts/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>I Didn&#39;t Understand State Machines Until I Asked These 5 Questions</title>
-      <link>http://localhost:1313/posts/state-machine/</link>
-      <pubDate>Wed, 10 Jun 2026 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/posts/state-machine/</guid>
-      <description>&lt;p&gt;Recently, I spent some time learning about State Machines (FSMs).&lt;/p&gt;
-&lt;p&gt;At first, every explanation sounded the same:&lt;/p&gt;
-&lt;p&gt;✅ State&lt;/p&gt;
-&lt;p&gt;✅ Event&lt;/p&gt;
-&lt;p&gt;✅ Transition&lt;/p&gt;
-&lt;p&gt;But I kept asking myself:&lt;/p&gt;
-&lt;p&gt;Isn’t this just a state transition flow?&lt;/p&gt;
-&lt;p&gt;After digging deeper, I finally understood what makes State Machines important.&lt;/p&gt;
-&lt;p&gt;⸻&lt;/p&gt;
-&lt;ol&gt;
-&lt;li&gt;What is a State Machine?&lt;/li&gt;
-&lt;/ol&gt;
-&lt;p&gt;In one sentence:&lt;/p&gt;
-&lt;p&gt;Current State + Event = Next State&lt;/p&gt;
-&lt;p&gt;For example, in an order system:&lt;/p&gt;
-&lt;p&gt;Pending Payment → Paid → Shipped → Delivered&lt;/p&gt;</description>
-    </item>
-  </channel>
-</rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Posts on Many WHYs</title><link>https://wyt1206.github.io/ManyWHYs/posts/</link><description>Recent content in Posts on Many WHYs</description><generator>Hugo</generator><language>en-us</language><lastBuildDate>Sat, 08 Aug 2026 00:00:00 +0000</lastBuildDate><atom:link href="https://wyt1206.github.io/ManyWHYs/posts/index.xml" rel="self" type="application/rss+xml"/><item><title>What Really Happens When Linux Deletes a File?</title><link>https://wyt1206.github.io/ManyWHYs/posts/what-happens-when-linux-deletes-file/</link><pubDate>Sat, 08 Aug 2026 00:00:00 +0000</pubDate><guid>https://wyt1206.github.io/ManyWHYs/posts/what-happens-when-linux-deletes-file/</guid><description>&lt;h1 id="what-really-happens-when-linux-deletes-a-file">What Really Happens When Linux Deletes a File?&lt;/h1>
+&lt;p>When we type:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>rm test.txt
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Most people think:&lt;/p>
+&lt;blockquote>
+&lt;p>Linux deletes the file immediately.&lt;/p>&lt;/blockquote>
+&lt;p>But this is not exactly true.&lt;/p>
+&lt;p>Linux does not directly erase data.&lt;/p>
+&lt;p>The real question:&lt;/p>
+&lt;blockquote>
+&lt;p>What does deleting a file actually mean?&lt;/p>&lt;/blockquote>
+&lt;hr>
+&lt;h1 id="1-what-happens-when-we-execute-rm">1. What Happens When We Execute rm?&lt;/h1>
+&lt;p>First:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>rm test.txt
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>is not a kernel operation.&lt;/p>
+&lt;p>&lt;code>rm&lt;/code> is a user-space program.&lt;/p>
+&lt;p>Check:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>which rm
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Example:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-text" data-lang="text">&lt;span style="display:flex;">&lt;span>/bin/rm
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;hr>
+&lt;p>Execution chain:&lt;/p></description></item><item><title>Why Can Multiple Threads Produce Wrong Results? From Race Condition to Mutex</title><link>https://wyt1206.github.io/ManyWHYs/posts/race-condition-and-mutex/</link><pubDate>Sat, 08 Aug 2026 00:00:00 +0000</pubDate><guid>https://wyt1206.github.io/ManyWHYs/posts/race-condition-and-mutex/</guid><description>&lt;h1 id="why-can-multiple-threads-produce-wrong-results-from-race-condition-to-mutex">Why Can Multiple Threads Produce Wrong Results? From Race Condition to Mutex&lt;/h1>
+&lt;p>Modern applications use multiple threads.&lt;/p>
+&lt;p>Example:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-text" data-lang="text">&lt;span style="display:flex;">&lt;span>Web Server
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>Thread 1 -&amp;gt; Request A
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>Thread 2 -&amp;gt; Request B
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>Thread 3 -&amp;gt; Request C
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>It looks faster.&lt;/p>
+&lt;p>But a simple question:&lt;/p>
+&lt;blockquote>
+&lt;p>If two threads execute correctly, why can the final result still be wrong?&lt;/p>&lt;/blockquote>
+&lt;p>The answer:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-text" data-lang="text">&lt;span style="display:flex;">&lt;span>Race Condition
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;hr>
+&lt;h1 id="1-why-can-multi-threaded-programs-be-wrong">1. Why Can Multi-threaded Programs Be Wrong?&lt;/h1>
+&lt;p>Consider:&lt;/p></description></item><item><title>How Does CPU Find the Next Instruction? Understanding Fetch and Cache</title><link>https://wyt1206.github.io/ManyWHYs/posts/how-cpu-fetches-next-instruction/</link><pubDate>Thu, 23 Jul 2026 00:00:00 +0000</pubDate><guid>https://wyt1206.github.io/ManyWHYs/posts/how-cpu-fetches-next-instruction/</guid><description>&lt;h1 id="how-does-cpu-find-the-next-instruction-understanding-fetch-and-cache">How Does CPU Find the Next Instruction? Understanding Fetch and Cache&lt;/h1>
+&lt;p>Every program eventually becomes:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-text" data-lang="text">&lt;span style="display:flex;">&lt;span>Machine Instructions
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>For example:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-c" data-lang="c">&lt;span style="display:flex;">&lt;span>a &lt;span style="color:#f92672">=&lt;/span> b &lt;span style="color:#f92672">+&lt;/span> c;
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>becomes:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-text" data-lang="text">&lt;span style="display:flex;">&lt;span>ADD instruction
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>But an important question:&lt;/p>
+&lt;blockquote>
+&lt;p>How does CPU know which instruction to execute next?&lt;/p>&lt;/blockquote>
+&lt;p>The answer involves:&lt;/p>
+&lt;ul>
+&lt;li>Program Counter&lt;/li>
+&lt;li>Instruction Fetch&lt;/li>
+&lt;li>Cache&lt;/li>
+&lt;li>Memory Hierarchy&lt;/li>
+&lt;/ul>
+&lt;hr>
+&lt;h1 id="1-what-stages-does-an-instruction-go-through">1. What Stages Does An Instruction Go Through?&lt;/h1>
+&lt;p>A CPU does not simply:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-text" data-lang="text">&lt;span style="display:flex;">&lt;span>Read instruction
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>↓
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>Execute
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Modern CPUs use pipelines.&lt;/p></description></item><item><title>How Do Linux Commands Actually Work? From Terminal to Kernel</title><link>https://wyt1206.github.io/ManyWHYs/posts/how-linux-command-works/</link><pubDate>Wed, 22 Jul 2026 00:00:00 +0000</pubDate><guid>https://wyt1206.github.io/ManyWHYs/posts/how-linux-command-works/</guid><description>&lt;h1 id="how-do-linux-commands-actually-work-from-terminal-to-kernel">How Do Linux Commands Actually Work? From Terminal to Kernel&lt;/h1>
+&lt;p>Every Linux user types commands:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>ls
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>or:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>lsof
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>or:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>netstat
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>It feels like:&lt;/p>
+&lt;pre tabindex="0">&lt;code>Command
+ |
+ v
+Linux
+&lt;/code>&lt;/pre>&lt;p>But the real execution chain is:&lt;/p>
+&lt;pre tabindex="0">&lt;code>Keyboard
+
+↓
+
+Terminal
+
+↓
+
+Shell
+
+↓
+
+Command Program
+
+↓
+
+ELF Loader
+
+↓
+
+Process
+
+↓
+
+System Call
+
+↓
+
+Kernel
+
+↓
+
+Hardware
+&lt;/code>&lt;/pre>&lt;p>The question:&lt;/p>
+&lt;blockquote>
+&lt;p>Who actually executes a Linux command?&lt;/p>&lt;/blockquote>
+&lt;hr>
+&lt;h1 id="1-when-we-type-ls-what-happens">1. When We Type ls, What Happens?&lt;/h1>
+&lt;p>The command begins with a user keystroke:&lt;/p></description></item><item><title>From CPU Hardware to Operating System: A Complete Execution Chain</title><link>https://wyt1206.github.io/ManyWHYs/posts/from-hardware-to-os-execution-chain/</link><pubDate>Mon, 20 Jul 2026 00:00:00 +0000</pubDate><guid>https://wyt1206.github.io/ManyWHYs/posts/from-hardware-to-os-execution-chain/</guid><description>&lt;h1 id="from-cpu-hardware-to-operating-system-a-complete-execution-chain">From CPU Hardware to Operating System: A Complete Execution Chain&lt;/h1>
+&lt;p>When we run:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>./server
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>many layers start working together.&lt;/p>
+&lt;p>Most developers only see:&lt;/p>
+&lt;pre tabindex="0">&lt;code>Application
+&lt;/code>&lt;/pre>&lt;p>but underneath:&lt;/p>
+&lt;pre tabindex="0">&lt;code>Application
+
+↓
+
+Library
+
+↓
+
+System Call
+
+↓
+
+Operating System
+
+↓
+
+CPU
+
+↓
+
+Hardware Circuit
+&lt;/code>&lt;/pre>&lt;p>The question:&lt;/p>
+&lt;blockquote>
+&lt;p>How does a piece of code finally become electrical signals inside CPU?&lt;/p>&lt;/blockquote>
+&lt;hr>
+&lt;h1 id="1-the-big-picture">1. The Big Picture&lt;/h1>
+&lt;p>A computer system can be divided into layers:&lt;/p>
+&lt;pre tabindex="0">&lt;code>Application
+
+ |
+ v
+
+Operating System
+
+ |
+ v
+
+Instruction Set Architecture (ISA)
+
+ |
+ v
+
+CPU Microarchitecture
+
+ |
+ v
+
+Digital Circuit
+
+ |
+ v
+
+Transistors
+&lt;/code>&lt;/pre>&lt;p>Each layer hides complexity from the layer above.&lt;/p></description></item><item><title>How Does CPU Remember a Thread? Understanding Context Switch</title><link>https://wyt1206.github.io/ManyWHYs/posts/how-cpu-remembers-thread/</link><pubDate>Mon, 20 Jul 2026 00:00:00 +0000</pubDate><guid>https://wyt1206.github.io/ManyWHYs/posts/how-cpu-remembers-thread/</guid><description>&lt;h1 id="how-does-cpu-remember-a-thread-understanding-context-switch">How Does CPU Remember a Thread? Understanding Context Switch&lt;/h1>
+&lt;p>When we run multiple programs:&lt;/p>
+&lt;pre tabindex="0">&lt;code>
+Browser
+
+Database
+
+Server
+
+Compiler
+&lt;/code>&lt;/pre>&lt;p>It looks like they are running simultaneously.&lt;/p>
+&lt;p>But:&lt;/p>
+&lt;p>A single CPU core can execute only one instruction stream at a time.&lt;/p>
+&lt;p>So the question:&lt;/p>
+&lt;blockquote>
+&lt;p>How can CPU switch between different threads and continue exactly where it stopped?&lt;/p>&lt;/blockquote>
+&lt;p>The answer:&lt;/p>
+&lt;pre tabindex="0">&lt;code>
+Context Switch
+&lt;/code>&lt;/pre>&lt;hr>
+&lt;h1 id="1-what-is-a-running-context">1. What Is A Running Context?&lt;/h1>
+&lt;p>A thread is not just code.&lt;/p></description></item><item><title>How Does Linux Manage Memory When Multiple Processes Use RAM?</title><link>https://wyt1206.github.io/ManyWHYs/posts/linux-memory-management/</link><pubDate>Sat, 18 Jul 2026 00:00:00 +0000</pubDate><guid>https://wyt1206.github.io/ManyWHYs/posts/linux-memory-management/</guid><description>&lt;h1 id="how-does-linux-manage-memory-when-multiple-processes-use-ram">How Does Linux Manage Memory When Multiple Processes Use RAM?&lt;/h1>
+&lt;p>Modern systems run many processes at the same time.&lt;/p>
+&lt;p>For example:&lt;/p>
+&lt;pre tabindex="0">&lt;code>
+Browser
+
+Database
+
+Nginx
+
+Redis
+
+Compiler
+&lt;/code>&lt;/pre>&lt;p>All of them need memory.&lt;/p>
+&lt;p>But physical RAM is limited.&lt;/p>
+&lt;p>A simple question:&lt;/p>
+&lt;blockquote>
+&lt;p>If multiple processes need more memory than the machine has, how does Linux manage it safely?&lt;/p>&lt;/blockquote>
+&lt;p>The answer is:&lt;/p>
+&lt;pre tabindex="0">&lt;code>
+Process
+
+|
+
+v
+
+Virtual Memory
+
+|
+
+v
+
+Page Table
+
+|
+
+v
+
+Physical Memory
+
+|
+
+v
+
+Memory Management
+&lt;/code>&lt;/pre>&lt;hr>
+&lt;h1 id="1-what-happens-if-multiple-processes-need-more-memory-than-ram">1. What Happens If Multiple Processes Need More Memory Than RAM?&lt;/h1>
+&lt;p>Imagine:&lt;/p></description></item><item><title>Why Is epoll So Important? Why Do Nginx and Redis Depend on It?</title><link>https://wyt1206.github.io/ManyWHYs/posts/why-epoll/</link><pubDate>Wed, 15 Jul 2026 00:00:00 +0000</pubDate><guid>https://wyt1206.github.io/ManyWHYs/posts/why-epoll/</guid><description>&lt;h1 id="why-is-epoll-so-important-why-do-nginx-and-redis-depend-on-it">Why Is epoll So Important? Why Do Nginx and Redis Depend on It?&lt;/h1>
+&lt;p>A high-performance server usually needs to handle thousands or millions of connections.&lt;/p>
+&lt;p>Examples:&lt;/p>
+&lt;ul>
+&lt;li>Nginx&lt;/li>
+&lt;li>Redis&lt;/li>
+&lt;li>Node.js&lt;/li>
+&lt;li>Netty&lt;/li>
+&lt;/ul>
+&lt;p>A simple question:&lt;/p>
+&lt;blockquote>
+&lt;p>If thousands of clients connect at the same time, how does one server know which socket has data?&lt;/p>&lt;/blockquote>
+&lt;p>This leads to:&lt;/p>
+&lt;pre tabindex="0">&lt;code>
+Socket
+
+|
+
+v
+
+I/O Multiplexing
+
+|
+
+v
+
+epoll
+
+|
+
+v
+
+Event Loop
+&lt;/code>&lt;/pre>&lt;hr>
+&lt;h1 id="1-why-does-a-tcp-server-need-io-multiplexing">1. Why Does a TCP Server Need I/O Multiplexing?&lt;/h1>
+&lt;p>A simple server shows the bottleneck directly.&lt;/p></description></item><item><title>What Is a Callback? Why Do epoll, ThreadPool, and Async Programming Need It?</title><link>https://wyt1206.github.io/ManyWHYs/posts/what-is-callback/</link><pubDate>Tue, 14 Jul 2026 00:00:00 +0000</pubDate><guid>https://wyt1206.github.io/ManyWHYs/posts/what-is-callback/</guid><description>&lt;h1 id="what-is-a-callback-why-do-epoll-threadpool-and-async-programming-need-it">What Is a Callback? Why Do epoll, ThreadPool, and Async Programming Need It?&lt;/h1>
+&lt;p>In traditional programming, we usually think:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-text" data-lang="text">&lt;span style="display:flex;">&lt;span>Call Function
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> |
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> v
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>Get Result
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Example:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-cpp" data-lang="cpp">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">int&lt;/span> result &lt;span style="color:#f92672">=&lt;/span> calculate();
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>The caller controls the entire flow.&lt;/p>
+&lt;p>But modern systems often work differently.&lt;/p>
+&lt;p>Examples:&lt;/p>
+&lt;ul>
+&lt;li>epoll&lt;/li>
+&lt;li>thread pools&lt;/li>
+&lt;li>GUI frameworks&lt;/li>
+&lt;li>asynchronous I/O&lt;/li>
+&lt;li>networking servers&lt;/li>
+&lt;/ul>
+&lt;p>They all have one common problem:&lt;/p>
+&lt;blockquote>
+&lt;p>We do not know exactly when something will happen.&lt;/p></description></item><item><title>How Does Linux Find the Real Socket From an Integer FD?</title><link>https://wyt1206.github.io/ManyWHYs/posts/how-linux-finds-socket-from-fd/</link><pubDate>Fri, 10 Jul 2026 00:00:00 +0000</pubDate><guid>https://wyt1206.github.io/ManyWHYs/posts/how-linux-finds-socket-from-fd/</guid><description>&lt;h1 id="how-does-linux-find-the-real-socket-from-an-integer-fd">How Does Linux Find the Real Socket From an Integer FD?&lt;/h1>
+&lt;p>In the previous article, we learned:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-c" data-lang="c">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">int&lt;/span> fd &lt;span style="color:#f92672">=&lt;/span> &lt;span style="color:#a6e22e">socket&lt;/span>(AF_INET, SOCK_STREAM, &lt;span style="color:#ae81ff">0&lt;/span>);
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>returns an integer.&lt;/p>
+&lt;p>But this creates another question:&lt;/p>
+&lt;blockquote>
+&lt;p>If a socket is represented only by an integer, how does Linux find the real socket object inside the kernel?&lt;/p>&lt;/blockquote>
+&lt;p>For example:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-c" data-lang="c">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#a6e22e">read&lt;/span>(fd, buffer, size);
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>The application only provides:&lt;/p>
+&lt;pre tabindex="0">&lt;code>fd = 3
+&lt;/code>&lt;/pre>&lt;p>But inside the kernel, Linux needs to locate:&lt;/p>
+&lt;pre tabindex="0">&lt;code>socket
+TCP state
+receive buffer
+send buffer
+protocol information
+&lt;/code>&lt;/pre>&lt;p>The complete lookup chain is:&lt;/p></description></item><item><title>How Do CPU, Process, Thread, Syscall, and Context Switch Work Together?</title><link>https://wyt1206.github.io/ManyWHYs/posts/cpu-thread-process-context-switch/</link><pubDate>Mon, 15 Jun 2026 00:00:00 +0000</pubDate><guid>https://wyt1206.github.io/ManyWHYs/posts/cpu-thread-process-context-switch/</guid><description>&lt;h1 id="how-do-cpu-process-thread-syscall-and-context-switch-work-together">How Do CPU, Process, Thread, Syscall, and Context Switch Work Together?&lt;/h1>
+&lt;p>When we run a program:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>./server
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Many things happen:&lt;/p>
+&lt;ul>
+&lt;li>CPU executes instructions&lt;/li>
+&lt;li>Linux creates a process&lt;/li>
+&lt;li>Scheduler chooses which thread runs&lt;/li>
+&lt;li>System calls enter the kernel&lt;/li>
+&lt;li>Context switches happen&lt;/li>
+&lt;/ul>
+&lt;p>A simple question:&lt;/p>
+&lt;blockquote>
+&lt;p>How does Linux manage many running programs on limited CPUs?&lt;/p>&lt;/blockquote>
+&lt;p>The answer connects:&lt;/p>
+&lt;pre tabindex="0">&lt;code>CPU
+
+ |
+
+ v
+
+Thread
+
+ |
+
+ v
+
+Process
+
+ |
+
+ v
+
+Scheduler
+
+ |
+
+ v
+
+Context Switch
+
+ |
+
+ v
+
+System Call
+&lt;/code>&lt;/pre>&lt;hr>
+&lt;h1 id="1-can-cpu-only-do-one-thing-at-a-time">1. Can CPU Only Do One Thing at a Time?&lt;/h1>
+&lt;p>At the hardware level:&lt;/p></description></item><item><title>I Didn't Understand State Machines Until I Asked These 5 Questions</title><link>https://wyt1206.github.io/ManyWHYs/posts/state-machine/</link><pubDate>Wed, 10 Jun 2026 00:00:00 +0000</pubDate><guid>https://wyt1206.github.io/ManyWHYs/posts/state-machine/</guid><description>&lt;h1 id="i-didnt-understand-state-machines-until-i-asked-these-5-questions">I Didn&amp;rsquo;t Understand State Machines Until I Asked These 5 Questions&lt;/h1>
+&lt;p>State machines are a model for describing system behavior through a finite set of states, events, and transitions.&lt;/p>
+&lt;p>A common summary is:&lt;/p>
+&lt;p>Current State + Event = Next State&lt;/p>
+&lt;p>For example, in an order system:&lt;/p>
+&lt;p>Pending Payment → Paid → Shipped → Delivered&lt;/p>
+&lt;p>When:&lt;/p>
+&lt;p>Current State = Pending Payment&lt;/p>
+&lt;p>Event = Payment Success&lt;/p>
+&lt;p>Result:&lt;/p>
+&lt;p>State becomes Paid&lt;/p>
+&lt;p>Simple enough.&lt;/p></description></item></channel></rss>

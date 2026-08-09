@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Syscall on Many WHYs</title><link>https://wyt1206.github.io/ManyWHYs/tags/syscall/</link><description>Recent content in Syscall on Many WHYs</description><generator>Hugo</generator><language>en-us</language><lastBuildDate>Wed, 22 Jul 2026 00:00:00 +0000</lastBuildDate><atom:link href="https://wyt1206.github.io/ManyWHYs/tags/syscall/index.xml" rel="self" type="application/rss+xml"/><item><title>How Do Linux Commands Actually Work? From Terminal to Kernel</title><link>https://wyt1206.github.io/ManyWHYs/posts/how-linux-command-works/</link><pubDate>Wed, 22 Jul 2026 00:00:00 +0000</pubDate><guid>https://wyt1206.github.io/ManyWHYs/posts/how-linux-command-works/</guid><description>&lt;h1 id="how-do-linux-commands-actually-work-from-terminal-to-kernel">How Do Linux Commands Actually Work? From Terminal to Kernel&lt;/h1>
+&lt;p>Every Linux user types commands:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>ls
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>or:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>lsof
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>or:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>netstat
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>It feels like:&lt;/p>
+&lt;pre tabindex="0">&lt;code>Command
+ |
+ v
+Linux
+&lt;/code>&lt;/pre>&lt;p>But the real execution chain is:&lt;/p>
+&lt;pre tabindex="0">&lt;code>Keyboard
+
+↓
+
+Terminal
+
+↓
+
+Shell
+
+↓
+
+Command Program
+
+↓
+
+ELF Loader
+
+↓
+
+Process
+
+↓
+
+System Call
+
+↓
+
+Kernel
+
+↓
+
+Hardware
+&lt;/code>&lt;/pre>&lt;p>The question:&lt;/p>
+&lt;blockquote>
+&lt;p>Who actually executes a Linux command?&lt;/p>&lt;/blockquote>
+&lt;hr>
+&lt;h1 id="1-when-we-type-ls-what-happens">1. When We Type ls, What Happens?&lt;/h1>
+&lt;p>The command begins with a user keystroke:&lt;/p></description></item><item><title>From CPU Hardware to Operating System: A Complete Execution Chain</title><link>https://wyt1206.github.io/ManyWHYs/posts/from-hardware-to-os-execution-chain/</link><pubDate>Mon, 20 Jul 2026 00:00:00 +0000</pubDate><guid>https://wyt1206.github.io/ManyWHYs/posts/from-hardware-to-os-execution-chain/</guid><description>&lt;h1 id="from-cpu-hardware-to-operating-system-a-complete-execution-chain">From CPU Hardware to Operating System: A Complete Execution Chain&lt;/h1>
+&lt;p>When we run:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>./server
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>many layers start working together.&lt;/p>
+&lt;p>Most developers only see:&lt;/p>
+&lt;pre tabindex="0">&lt;code>Application
+&lt;/code>&lt;/pre>&lt;p>but underneath:&lt;/p>
+&lt;pre tabindex="0">&lt;code>Application
+
+↓
+
+Library
+
+↓
+
+System Call
+
+↓
+
+Operating System
+
+↓
+
+CPU
+
+↓
+
+Hardware Circuit
+&lt;/code>&lt;/pre>&lt;p>The question:&lt;/p>
+&lt;blockquote>
+&lt;p>How does a piece of code finally become electrical signals inside CPU?&lt;/p>&lt;/blockquote>
+&lt;hr>
+&lt;h1 id="1-the-big-picture">1. The Big Picture&lt;/h1>
+&lt;p>A computer system can be divided into layers:&lt;/p>
+&lt;pre tabindex="0">&lt;code>Application
+
+ |
+ v
+
+Operating System
+
+ |
+ v
+
+Instruction Set Architecture (ISA)
+
+ |
+ v
+
+CPU Microarchitecture
+
+ |
+ v
+
+Digital Circuit
+
+ |
+ v
+
+Transistors
+&lt;/code>&lt;/pre>&lt;p>Each layer hides complexity from the layer above.&lt;/p></description></item><item><title>How Do CPU, Process, Thread, Syscall, and Context Switch Work Together?</title><link>https://wyt1206.github.io/ManyWHYs/posts/cpu-thread-process-context-switch/</link><pubDate>Mon, 15 Jun 2026 00:00:00 +0000</pubDate><guid>https://wyt1206.github.io/ManyWHYs/posts/cpu-thread-process-context-switch/</guid><description>&lt;h1 id="how-do-cpu-process-thread-syscall-and-context-switch-work-together">How Do CPU, Process, Thread, Syscall, and Context Switch Work Together?&lt;/h1>
+&lt;p>When we run a program:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>./server
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Many things happen:&lt;/p>
+&lt;ul>
+&lt;li>CPU executes instructions&lt;/li>
+&lt;li>Linux creates a process&lt;/li>
+&lt;li>Scheduler chooses which thread runs&lt;/li>
+&lt;li>System calls enter the kernel&lt;/li>
+&lt;li>Context switches happen&lt;/li>
+&lt;/ul>
+&lt;p>A simple question:&lt;/p>
+&lt;blockquote>
+&lt;p>How does Linux manage many running programs on limited CPUs?&lt;/p>&lt;/blockquote>
+&lt;p>The answer connects:&lt;/p>
+&lt;pre tabindex="0">&lt;code>CPU
+
+ |
+
+ v
+
+Thread
+
+ |
+
+ v
+
+Process
+
+ |
+
+ v
+
+Scheduler
+
+ |
+
+ v
+
+Context Switch
+
+ |
+
+ v
+
+System Call
+&lt;/code>&lt;/pre>&lt;hr>
+&lt;h1 id="1-can-cpu-only-do-one-thing-at-a-time">1. Can CPU Only Do One Thing at a Time?&lt;/h1>
+&lt;p>At the hardware level:&lt;/p></description></item></channel></rss>

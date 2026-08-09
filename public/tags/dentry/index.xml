@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Dentry on Many WHYs</title><link>https://wyt1206.github.io/ManyWHYs/tags/dentry/</link><description>Recent content in Dentry on Many WHYs</description><generator>Hugo</generator><language>en-us</language><lastBuildDate>Sat, 08 Aug 2026 00:00:00 +0000</lastBuildDate><atom:link href="https://wyt1206.github.io/ManyWHYs/tags/dentry/index.xml" rel="self" type="application/rss+xml"/><item><title>What Really Happens When Linux Deletes a File?</title><link>https://wyt1206.github.io/ManyWHYs/posts/what-happens-when-linux-deletes-file/</link><pubDate>Sat, 08 Aug 2026 00:00:00 +0000</pubDate><guid>https://wyt1206.github.io/ManyWHYs/posts/what-happens-when-linux-deletes-file/</guid><description>&lt;h1 id="what-really-happens-when-linux-deletes-a-file">What Really Happens When Linux Deletes a File?&lt;/h1>
+&lt;p>When we type:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>rm test.txt
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Most people think:&lt;/p>
+&lt;blockquote>
+&lt;p>Linux deletes the file immediately.&lt;/p>&lt;/blockquote>
+&lt;p>But this is not exactly true.&lt;/p>
+&lt;p>Linux does not directly erase data.&lt;/p>
+&lt;p>The real question:&lt;/p>
+&lt;blockquote>
+&lt;p>What does deleting a file actually mean?&lt;/p>&lt;/blockquote>
+&lt;hr>
+&lt;h1 id="1-what-happens-when-we-execute-rm">1. What Happens When We Execute rm?&lt;/h1>
+&lt;p>First:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>rm test.txt
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>is not a kernel operation.&lt;/p>
+&lt;p>&lt;code>rm&lt;/code> is a user-space program.&lt;/p>
+&lt;p>Check:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>which rm
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Example:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-text" data-lang="text">&lt;span style="display:flex;">&lt;span>/bin/rm
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;hr>
+&lt;p>Execution chain:&lt;/p></description></item></channel></rss>

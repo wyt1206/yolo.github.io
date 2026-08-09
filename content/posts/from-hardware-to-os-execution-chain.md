@@ -1,7 +1,7 @@
 ---
 title: "From CPU Hardware to Operating System: A Complete Execution Chain"
 date: 2026-07-20
-draft: true
+draft: false
 tags:
   - Computer Architecture
   - CPU
@@ -13,9 +13,6 @@ tags:
   - Cache
 categories:
   - Many WHYs
----
-```
-
 ---
 
 # From CPU Hardware to Operating System: A Complete Execution Chain
@@ -333,7 +330,7 @@ Linux handles everything.
 
 # 5. Complete Execution Flow
 
-Let's follow:
+The system can be read as a single execution path:
 
 ```c
 read(fd, buffer, size);

@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Context Switch on Many WHYs</title><link>https://wyt1206.github.io/ManyWHYs/tags/context-switch/</link><description>Recent content in Context Switch on Many WHYs</description><generator>Hugo</generator><language>en-us</language><lastBuildDate>Mon, 20 Jul 2026 00:00:00 +0000</lastBuildDate><atom:link href="https://wyt1206.github.io/ManyWHYs/tags/context-switch/index.xml" rel="self" type="application/rss+xml"/><item><title>How Does CPU Remember a Thread? Understanding Context Switch</title><link>https://wyt1206.github.io/ManyWHYs/posts/how-cpu-remembers-thread/</link><pubDate>Mon, 20 Jul 2026 00:00:00 +0000</pubDate><guid>https://wyt1206.github.io/ManyWHYs/posts/how-cpu-remembers-thread/</guid><description>&lt;h1 id="how-does-cpu-remember-a-thread-understanding-context-switch">How Does CPU Remember a Thread? Understanding Context Switch&lt;/h1>
+&lt;p>When we run multiple programs:&lt;/p>
+&lt;pre tabindex="0">&lt;code>
+Browser
+
+Database
+
+Server
+
+Compiler
+&lt;/code>&lt;/pre>&lt;p>It looks like they are running simultaneously.&lt;/p>
+&lt;p>But:&lt;/p>
+&lt;p>A single CPU core can execute only one instruction stream at a time.&lt;/p>
+&lt;p>So the question:&lt;/p>
+&lt;blockquote>
+&lt;p>How can CPU switch between different threads and continue exactly where it stopped?&lt;/p>&lt;/blockquote>
+&lt;p>The answer:&lt;/p>
+&lt;pre tabindex="0">&lt;code>
+Context Switch
+&lt;/code>&lt;/pre>&lt;hr>
+&lt;h1 id="1-what-is-a-running-context">1. What Is A Running Context?&lt;/h1>
+&lt;p>A thread is not just code.&lt;/p></description></item><item><title>How Do CPU, Process, Thread, Syscall, and Context Switch Work Together?</title><link>https://wyt1206.github.io/ManyWHYs/posts/cpu-thread-process-context-switch/</link><pubDate>Mon, 15 Jun 2026 00:00:00 +0000</pubDate><guid>https://wyt1206.github.io/ManyWHYs/posts/cpu-thread-process-context-switch/</guid><description>&lt;h1 id="how-do-cpu-process-thread-syscall-and-context-switch-work-together">How Do CPU, Process, Thread, Syscall, and Context Switch Work Together?&lt;/h1>
+&lt;p>When we run a program:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>./server
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Many things happen:&lt;/p>
+&lt;ul>
+&lt;li>CPU executes instructions&lt;/li>
+&lt;li>Linux creates a process&lt;/li>
+&lt;li>Scheduler chooses which thread runs&lt;/li>
+&lt;li>System calls enter the kernel&lt;/li>
+&lt;li>Context switches happen&lt;/li>
+&lt;/ul>
+&lt;p>A simple question:&lt;/p>
+&lt;blockquote>
+&lt;p>How does Linux manage many running programs on limited CPUs?&lt;/p>&lt;/blockquote>
+&lt;p>The answer connects:&lt;/p>
+&lt;pre tabindex="0">&lt;code>CPU
+
+ |
+
+ v
+
+Thread
+
+ |
+
+ v
+
+Process
+
+ |
+
+ v
+
+Scheduler
+
+ |
+
+ v
+
+Context Switch
+
+ |
+
+ v
+
+System Call
+&lt;/code>&lt;/pre>&lt;hr>
+&lt;h1 id="1-can-cpu-only-do-one-thing-at-a-time">1. Can CPU Only Do One Thing at a Time?&lt;/h1>
+&lt;p>At the hardware level:&lt;/p></description></item></channel></rss>

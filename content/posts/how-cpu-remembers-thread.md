@@ -1,7 +1,7 @@
 ---
 title: "How Does CPU Remember a Thread? Understanding Context Switch"
 date: 2026-07-20
-draft: true
+draft: false
 tags:
   - Linux
   - CPU
@@ -13,15 +13,12 @@ tags:
 categories:
   - Many WHYs
 ---
-```
-
----
 
 # How Does CPU Remember a Thread? Understanding Context Switch
 
 When we run multiple programs:
-
 ```
+
 Browser
 
 Database
@@ -29,6 +26,7 @@ Database
 Server
 
 Compiler
+
 ```
 
 It looks like they are running simultaneously.
@@ -42,9 +40,10 @@ So the question:
 > How can CPU switch between different threads and continue exactly where it stopped?
 
 The answer:
-
 ```
+
 Context Switch
+
 ```
 
 ---
@@ -54,9 +53,10 @@ Context Switch
 A thread is not just code.
 
 A running thread needs:
-
 ```
+
 Execution State
+
 ```
 
 including:
@@ -68,9 +68,10 @@ including:
 * Kernel Scheduling Information
 
 Together:
-
 ```
+
 Thread Context
+
 ```
 
 ---
@@ -438,9 +439,7 @@ Process B
 Need:
 
 1. Save CPU registers
-
 2. Switch memory space
-
 3. Change page table
 
 ---

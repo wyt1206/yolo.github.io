@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Event on Many WHYs</title><link>https://wyt1206.github.io/ManyWHYs/tags/event/</link><description>Recent content in Event on Many WHYs</description><generator>Hugo</generator><language>en-us</language><lastBuildDate>Wed, 10 Jun 2026 00:00:00 +0000</lastBuildDate><atom:link href="https://wyt1206.github.io/ManyWHYs/tags/event/index.xml" rel="self" type="application/rss+xml"/><item><title>I Didn't Understand State Machines Until I Asked These 5 Questions</title><link>https://wyt1206.github.io/ManyWHYs/posts/state-machine/</link><pubDate>Wed, 10 Jun 2026 00:00:00 +0000</pubDate><guid>https://wyt1206.github.io/ManyWHYs/posts/state-machine/</guid><description>&lt;h1 id="i-didnt-understand-state-machines-until-i-asked-these-5-questions">I Didn&amp;rsquo;t Understand State Machines Until I Asked These 5 Questions&lt;/h1>
+&lt;p>State machines are a model for describing system behavior through a finite set of states, events, and transitions.&lt;/p>
+&lt;p>A common summary is:&lt;/p>
+&lt;p>Current State + Event = Next State&lt;/p>
+&lt;p>For example, in an order system:&lt;/p>
+&lt;p>Pending Payment → Paid → Shipped → Delivered&lt;/p>
+&lt;p>When:&lt;/p>
+&lt;p>Current State = Pending Payment&lt;/p>
+&lt;p>Event = Payment Success&lt;/p>
+&lt;p>Result:&lt;/p>
+&lt;p>State becomes Paid&lt;/p>
+&lt;p>Simple enough.&lt;/p></description></item></channel></rss>

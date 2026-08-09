@@ -1,7 +1,7 @@
 ---
 title: "Why Can Multiple Threads Produce Wrong Results? From Race Condition to Mutex"
 date: 2026-08-08
-draft: true
+draft: false
 tags:
   - Linux
   - Thread
@@ -12,9 +12,6 @@ tags:
   - CPU Cache
 categories:
   - Many WHYs
----
-```
-
 ---
 
 # Why Can Multiple Threads Produce Wrong Results? From Race Condition to Mutex

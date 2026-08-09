@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Memory Management on Many WHYs</title><link>https://wyt1206.github.io/ManyWHYs/tags/memory-management/</link><description>Recent content in Memory Management on Many WHYs</description><generator>Hugo</generator><language>en-us</language><lastBuildDate>Sat, 18 Jul 2026 00:00:00 +0000</lastBuildDate><atom:link href="https://wyt1206.github.io/ManyWHYs/tags/memory-management/index.xml" rel="self" type="application/rss+xml"/><item><title>How Does Linux Manage Memory When Multiple Processes Use RAM?</title><link>https://wyt1206.github.io/ManyWHYs/posts/linux-memory-management/</link><pubDate>Sat, 18 Jul 2026 00:00:00 +0000</pubDate><guid>https://wyt1206.github.io/ManyWHYs/posts/linux-memory-management/</guid><description>&lt;h1 id="how-does-linux-manage-memory-when-multiple-processes-use-ram">How Does Linux Manage Memory When Multiple Processes Use RAM?&lt;/h1>
+&lt;p>Modern systems run many processes at the same time.&lt;/p>
+&lt;p>For example:&lt;/p>
+&lt;pre tabindex="0">&lt;code>
+Browser
+
+Database
+
+Nginx
+
+Redis
+
+Compiler
+&lt;/code>&lt;/pre>&lt;p>All of them need memory.&lt;/p>
+&lt;p>But physical RAM is limited.&lt;/p>
+&lt;p>A simple question:&lt;/p>
+&lt;blockquote>
+&lt;p>If multiple processes need more memory than the machine has, how does Linux manage it safely?&lt;/p>&lt;/blockquote>
+&lt;p>The answer is:&lt;/p>
+&lt;pre tabindex="0">&lt;code>
+Process
+
+|
+
+v
+
+Virtual Memory
+
+|
+
+v
+
+Page Table
+
+|
+
+v
+
+Physical Memory
+
+|
+
+v
+
+Memory Management
+&lt;/code>&lt;/pre>&lt;hr>
+&lt;h1 id="1-what-happens-if-multiple-processes-need-more-memory-than-ram">1. What Happens If Multiple Processes Need More Memory Than RAM?&lt;/h1>
+&lt;p>Imagine:&lt;/p></description></item></channel></rss>

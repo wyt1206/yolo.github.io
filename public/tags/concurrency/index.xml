@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Concurrency on Many WHYs</title><link>https://wyt1206.github.io/ManyWHYs/tags/concurrency/</link><description>Recent content in Concurrency on Many WHYs</description><generator>Hugo</generator><language>en-us</language><lastBuildDate>Sat, 08 Aug 2026 00:00:00 +0000</lastBuildDate><atom:link href="https://wyt1206.github.io/ManyWHYs/tags/concurrency/index.xml" rel="self" type="application/rss+xml"/><item><title>Why Can Multiple Threads Produce Wrong Results? From Race Condition to Mutex</title><link>https://wyt1206.github.io/ManyWHYs/posts/race-condition-and-mutex/</link><pubDate>Sat, 08 Aug 2026 00:00:00 +0000</pubDate><guid>https://wyt1206.github.io/ManyWHYs/posts/race-condition-and-mutex/</guid><description>&lt;h1 id="why-can-multiple-threads-produce-wrong-results-from-race-condition-to-mutex">Why Can Multiple Threads Produce Wrong Results? From Race Condition to Mutex&lt;/h1>
+&lt;p>Modern applications use multiple threads.&lt;/p>
+&lt;p>Example:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-text" data-lang="text">&lt;span style="display:flex;">&lt;span>Web Server
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>Thread 1 -&amp;gt; Request A
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>Thread 2 -&amp;gt; Request B
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>Thread 3 -&amp;gt; Request C
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>It looks faster.&lt;/p>
+&lt;p>But a simple question:&lt;/p>
+&lt;blockquote>
+&lt;p>If two threads execute correctly, why can the final result still be wrong?&lt;/p>&lt;/blockquote>
+&lt;p>The answer:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-text" data-lang="text">&lt;span style="display:flex;">&lt;span>Race Condition
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;hr>
+&lt;h1 id="1-why-can-multi-threaded-programs-be-wrong">1. Why Can Multi-threaded Programs Be Wrong?&lt;/h1>
+&lt;p>Consider:&lt;/p></description></item></channel></rss>

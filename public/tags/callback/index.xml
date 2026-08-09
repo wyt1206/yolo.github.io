@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Callback on Many WHYs</title><link>https://wyt1206.github.io/ManyWHYs/tags/callback/</link><description>Recent content in Callback on Many WHYs</description><generator>Hugo</generator><language>en-us</language><lastBuildDate>Tue, 14 Jul 2026 00:00:00 +0000</lastBuildDate><atom:link href="https://wyt1206.github.io/ManyWHYs/tags/callback/index.xml" rel="self" type="application/rss+xml"/><item><title>What Is a Callback? Why Do epoll, ThreadPool, and Async Programming Need It?</title><link>https://wyt1206.github.io/ManyWHYs/posts/what-is-callback/</link><pubDate>Tue, 14 Jul 2026 00:00:00 +0000</pubDate><guid>https://wyt1206.github.io/ManyWHYs/posts/what-is-callback/</guid><description>&lt;h1 id="what-is-a-callback-why-do-epoll-threadpool-and-async-programming-need-it">What Is a Callback? Why Do epoll, ThreadPool, and Async Programming Need It?&lt;/h1>
+&lt;p>In traditional programming, we usually think:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-text" data-lang="text">&lt;span style="display:flex;">&lt;span>Call Function
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> |
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> v
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>Get Result
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Example:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-cpp" data-lang="cpp">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">int&lt;/span> result &lt;span style="color:#f92672">=&lt;/span> calculate();
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>The caller controls the entire flow.&lt;/p>
+&lt;p>But modern systems often work differently.&lt;/p>
+&lt;p>Examples:&lt;/p>
+&lt;ul>
+&lt;li>epoll&lt;/li>
+&lt;li>thread pools&lt;/li>
+&lt;li>GUI frameworks&lt;/li>
+&lt;li>asynchronous I/O&lt;/li>
+&lt;li>networking servers&lt;/li>
+&lt;/ul>
+&lt;p>They all have one common problem:&lt;/p>
+&lt;blockquote>
+&lt;p>We do not know exactly when something will happen.&lt;/p></description></item></channel></rss>

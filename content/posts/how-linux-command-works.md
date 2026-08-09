@@ -1,7 +1,7 @@
 ---
 title: "How Do Linux Commands Actually Work? From Terminal to Kernel"
 date: 2026-07-22
-draft: true
+draft: false
 tags:
   - Linux
   - Shell
@@ -12,9 +12,6 @@ tags:
   - Kernel
 categories:
   - Many WHYs
----
-```
-
 ---
 
 # How Do Linux Commands Actually Work? From Terminal to Kernel
@@ -92,7 +89,7 @@ The question:
 
 # 1. When We Type ls, What Happens?
 
-Let's start:
+The command begins with a user keystroke:
 
 ```bash
 ls
@@ -519,13 +516,9 @@ Linux executable format.
 The loader:
 
 1. Reads ELF header
-
 2. Creates memory layout
-
 3. Maps program sections
-
 4. Loads libraries
-
 5. Sets entry point
 
 ---

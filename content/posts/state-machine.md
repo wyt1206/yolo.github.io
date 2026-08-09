@@ -1,34 +1,22 @@
 ---
-
 title: "I Didn't Understand State Machines Until I Asked These 5 Questions"
-
 date: 2026-06-10
-
 draft: false
-
+tags:
+  - State Machine
+  - FSM
+  - Event
+  - Systems Design
+  - Distributed Systems
+categories:
+  - Many WHYs
 ---
 
-Recently, I spent some time learning about State Machines (FSMs).
+# I Didn't Understand State Machines Until I Asked These 5 Questions
 
-At first, every explanation sounded the same:
+State machines are a model for describing system behavior through a finite set of states, events, and transitions.
 
-✅ State
-
-✅ Event
-
-✅ Transition
-
-But I kept asking myself:
-
-Isn’t this just a state transition flow?
-
-After digging deeper, I finally understood what makes State Machines important.
-
-⸻
-
-1. What is a State Machine?
-
-In one sentence:
+A common summary is:
 
 Current State + Event = Next State
 

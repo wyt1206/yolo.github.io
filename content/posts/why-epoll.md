@@ -57,7 +57,7 @@ Event Loop
 
 # 1. Why Does a TCP Server Need I/O Multiplexing?
 
-Let's start with a simple server.
+A simple server shows the bottleneck directly.
 
 Traditional blocking model:
 

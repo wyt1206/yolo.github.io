@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Scheduling on Many WHYs</title><link>https://wyt1206.github.io/ManyWHYs/tags/scheduling/</link><description>Recent content in Scheduling on Many WHYs</description><generator>Hugo</generator><language>en-us</language><lastBuildDate>Mon, 20 Jul 2026 00:00:00 +0000</lastBuildDate><atom:link href="https://wyt1206.github.io/ManyWHYs/tags/scheduling/index.xml" rel="self" type="application/rss+xml"/><item><title>How Does CPU Remember a Thread? Understanding Context Switch</title><link>https://wyt1206.github.io/ManyWHYs/posts/how-cpu-remembers-thread/</link><pubDate>Mon, 20 Jul 2026 00:00:00 +0000</pubDate><guid>https://wyt1206.github.io/ManyWHYs/posts/how-cpu-remembers-thread/</guid><description>&lt;h1 id="how-does-cpu-remember-a-thread-understanding-context-switch">How Does CPU Remember a Thread? Understanding Context Switch&lt;/h1>
+&lt;p>When we run multiple programs:&lt;/p>
+&lt;pre tabindex="0">&lt;code>
+Browser
+
+Database
+
+Server
+
+Compiler
+&lt;/code>&lt;/pre>&lt;p>It looks like they are running simultaneously.&lt;/p>
+&lt;p>But:&lt;/p>
+&lt;p>A single CPU core can execute only one instruction stream at a time.&lt;/p>
+&lt;p>So the question:&lt;/p>
+&lt;blockquote>
+&lt;p>How can CPU switch between different threads and continue exactly where it stopped?&lt;/p>&lt;/blockquote>
+&lt;p>The answer:&lt;/p>
+&lt;pre tabindex="0">&lt;code>
+Context Switch
+&lt;/code>&lt;/pre>&lt;hr>
+&lt;h1 id="1-what-is-a-running-context">1. What Is A Running Context?&lt;/h1>
+&lt;p>A thread is not just code.&lt;/p></description></item></channel></rss>

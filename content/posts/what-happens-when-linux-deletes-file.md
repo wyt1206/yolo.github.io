@@ -1,7 +1,7 @@
 ---
 title: "What Really Happens When Linux Deletes a File?"
 date: 2026-08-08
-draft: true
+draft: false
 tags:
   - Linux
   - File System
@@ -12,9 +12,6 @@ tags:
   - VFS
 categories:
   - Many WHYs
----
-```
-
 ---
 
 # What Really Happens When Linux Deletes a File?
@@ -651,15 +648,10 @@ directory
 For every file:
 
 1. lookup dentry
-
 2. unlink filename
-
 3. update inode
-
 4. update metadata
-
 5. release blocks
-
 6. update journal
 
 ---
@@ -931,3 +923,4 @@ No open FD
 =
 
 File finally deleted
+```
