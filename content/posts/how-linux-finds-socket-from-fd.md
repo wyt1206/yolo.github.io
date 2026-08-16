@@ -11,8 +11,6 @@ tags:
 categories:
   - Many WHYs
 ---
-# How Does Linux Find the Real Socket From an Integer FD?
-
 In the previous article, we learned:
 
 ```c

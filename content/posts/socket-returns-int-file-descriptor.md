@@ -11,8 +11,6 @@ tags:
 categories:
   - Many WHYs
 ---
-# Why Does socket() Return an Integer? Understanding File Descriptor in Linux
-
 When writing network programs in Linux, we often see:
 
 ```c

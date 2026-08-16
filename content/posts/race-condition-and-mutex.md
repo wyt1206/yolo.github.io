@@ -13,8 +13,6 @@ tags:
 categories:
   - Many WHYs
 ---
-# Why Can Multiple Threads Produce Wrong Results? From Race Condition to Mutex
-
 Modern applications use multiple threads.
 
 Example:

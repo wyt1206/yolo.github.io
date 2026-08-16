@@ -11,8 +11,6 @@ tags:
 categories:
   - Many WHYs
 ---
-# What Is a Callback? Why Do epoll, ThreadPool, and Async Programming Need It?
-
 In traditional programming, we usually think:
 
 ```text

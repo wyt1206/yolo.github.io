@@ -1,4 +1,3 @@
-
 ---
 title: "Why Does epoll Need Both a Red-Black Tree and a Ready List?"
 date: 2026-08-16
@@ -11,9 +10,6 @@ tags:
 categories:
   - Linux
 ---
-
-# Why Does epoll Need Both a Red-Black Tree and a Ready List?
-
 When looking at how `epoll` works internally, two data structures often come up:
 
 - a red-black tree
@@ -41,7 +37,7 @@ For example, an epoll instance might be watching:
 
 ```text
 1,000,000 file descriptors
-````
+```
 
 while only:
 

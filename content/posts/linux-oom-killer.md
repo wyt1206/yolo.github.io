@@ -11,8 +11,6 @@ tags:
 categories:
   - Many WHYs
 ---
-# Linux OOM Killer: How Does Linux Survive When Memory Runs Out?
-
 Memory is one of the most important resources in an operating system.
 
 Every process needs memory:

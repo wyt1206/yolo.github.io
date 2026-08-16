@@ -11,8 +11,6 @@ tags:
 categories:
   - Many WHYs
 ---
-# How Are Callbacks Registered? From Function Registration to Event-Driven Systems
-
 In the previous article, we learned:
 
 > A callback is a function that is called later when an event happens.

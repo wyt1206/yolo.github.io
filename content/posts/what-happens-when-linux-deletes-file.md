@@ -13,8 +13,6 @@ tags:
 categories:
   - Many WHYs
 ---
-# What Really Happens When Linux Deletes a File?
-
 When we type:
 
 ```bash

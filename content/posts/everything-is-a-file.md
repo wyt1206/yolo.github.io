@@ -11,8 +11,6 @@ tags:
 categories:
   - Many WHYs
 ---
-# How Does Linux Implement "Everything Is a File"?
-
 Many people have heard:
 
 > Everything is a file in Linux.

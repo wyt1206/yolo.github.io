@@ -12,12 +12,10 @@ tags:
 categories:
   - Many WHYs
 ---
-
-# How Does Linux Manage Memory When Multiple Processes Use RAM?
-
 Modern systems run many processes at the same time.
 
 For example:
+
 ```
 
 Browser
@@ -29,7 +27,6 @@ Nginx
 Redis
 
 Compiler
-
 ```
 
 All of them need memory.
@@ -156,9 +153,11 @@ Process A
 address 1000
 
 ```
+
   |
 
   v
+
 ```
 
 RAM address 1000
@@ -176,9 +175,11 @@ Process B
 address 1000
 
 ```
+
   |
 
   v
+
 ```
 
 same RAM location
@@ -202,9 +203,11 @@ Process A
 Virtual Address
 
 ```
+
     |
 
     v
+
 ```
 
 Physical Address
@@ -214,9 +217,11 @@ Process B
 Virtual Address
 
 ```
+
     |
 
     v
+
 ```
 
 Different Physical Address
@@ -330,9 +335,11 @@ Process A
 needs page
 
 ```
+
     |
 
     v
+
 ```
 
 Kernel selects free frame
@@ -406,9 +413,11 @@ Mapping:
 Virtual Page
 
 ```
+
     |
 
     v
+
 ```
 
 Physical Frame
@@ -525,9 +534,11 @@ Finds:
 Virtual Page 1
 
 ```
+
   |
 
   v
+
 ```
 
 Physical Frame 100
@@ -555,7 +566,9 @@ Page Table stores:
 Virtual Page
 
 ```
+
     ->
+
 ```
 
 Physical Frame
@@ -660,7 +673,9 @@ It is a cache for:
 Virtual Address
 
 ```
+
     ->
+
 ```
 
 Physical Address
@@ -760,17 +775,21 @@ If everything fails:
 Memory exhausted
 
 ```
+
     |
 
     v
+
 ```
 
 OOM Killer
 
 ```
+
     |
 
     v
+
 ```
 
 Kill process
@@ -843,7 +862,7 @@ Swap:
 
 Cold pages
 
-````
+```
 
 ---
 
@@ -867,7 +886,7 @@ Linux exposes:
 
 ```bash
 swapon --show
-````
+```
 
 Example:
 

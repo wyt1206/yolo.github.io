@@ -14,9 +14,6 @@ tags:
 categories:
   - Many WHYs
 ---
-
-# From CPU Hardware to Operating System: A Complete Execution Chain
-
 When we run:
 
 ```bash

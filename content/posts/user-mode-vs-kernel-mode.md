@@ -11,8 +11,6 @@ tags:
 categories:
   - Many WHYs
 ---
-# Why Does Linux Separate User Mode and Kernel Mode?
-
 When we run a program:
 
 ```c

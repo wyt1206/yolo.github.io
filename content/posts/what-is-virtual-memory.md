@@ -13,8 +13,6 @@ tags:
 categories:
   - Many WHYs
 ---
-# Virtual Memory Explained: From Address Translation to Huge Pages
-
 Every program uses memory.
 
 When we write:

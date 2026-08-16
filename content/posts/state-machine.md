@@ -11,9 +11,6 @@ tags:
 categories:
   - Many WHYs
 ---
-
-# I Didn't Understand State Machines Until I Asked These 5 Questions
-
 State machines are a model for describing system behavior through a finite set of states, events, and transitions.
 
 A common summary is:

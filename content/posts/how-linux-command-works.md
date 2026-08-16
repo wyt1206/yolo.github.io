@@ -13,9 +13,6 @@ tags:
 categories:
   - Many WHYs
 ---
-
-# How Do Linux Commands Actually Work? From Terminal to Kernel
-
 Every Linux user types commands:
 
 ```bash

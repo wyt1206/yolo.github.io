@@ -11,8 +11,6 @@ tags:
 categories:
   - Many WHYs
 ---
-# Why Does Socket Programming Need htons()? Understanding Byte Order
-
 When writing Linux socket programs, we often see:
 
 ```c

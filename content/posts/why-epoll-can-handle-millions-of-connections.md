@@ -12,18 +12,22 @@ categories:
   - Systems
 description: "Understanding why Linux epoll scales to millions of TCP connections and how it differs from select and poll."
 ---
-# Why Can epoll Handle Millions of Connections?
 You may have heard that:
+
 > Nginx can handle hundreds of thousands or even millions of TCP connections.
-But a natural question comes up:
-**How can one process manage so many sockets efficiently?**
-Does it check every connection repeatedly?
-The short answer:
-No.
-The reason is that **epoll changes the way we discover I/O events.**
+> But a natural question comes up:
+> **How can one process manage so many sockets efficiently?**
+> Does it check every connection repeatedly?
+> The short answer:
+> No.
+> The reason is that **epoll changes the way we discover I/O events.**
+
 ---
+
 ## Why doesn't scanning all connections scale?
+
 A simple approach would be:
+
 ```text
 Check socket 1
 Check socket 2
@@ -386,3 +390,4 @@ If epoll can handle millions of connections:
 * How does a Reactor-based server manage connection lifecycle?
 
 These questions lead deeper into Linux networking and high-performance server design.
+```

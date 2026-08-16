@@ -12,9 +12,6 @@ tags:
 categories:
   - Many WHYs
 ---
-
-# How Does CPU Find the Next Instruction? Understanding Fetch and Cache
-
 Every program eventually becomes:
 
 ```text

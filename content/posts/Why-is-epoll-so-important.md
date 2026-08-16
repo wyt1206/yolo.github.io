@@ -12,8 +12,6 @@ tags:
 categories:
   - Many WHYs
 ---
-# Why Is epoll So Important? Why Do Nginx and Redis Depend on It?
-
 A high-performance server usually needs to handle thousands or millions of connections.
 
 Examples:
@@ -50,7 +48,6 @@ epoll
 v
 
 Event Loop
-
 ```
 
 ---

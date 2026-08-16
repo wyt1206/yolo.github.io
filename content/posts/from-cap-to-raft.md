@@ -11,8 +11,6 @@ tags:
 categories:
   - Many WHYs
 ---
-# From CAP to Raft: The Complete Reasoning Chain Behind Distributed Systems
-
 Many engineers know:
 
 - CAP theorem

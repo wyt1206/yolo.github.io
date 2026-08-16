@@ -13,8 +13,6 @@ tags:
 categories:
   - Many WHYs
 ---
-# How Do CPU, Process, Thread, Syscall, and Context Switch Work Together?
-
 When we run a program:
 
 ```bash

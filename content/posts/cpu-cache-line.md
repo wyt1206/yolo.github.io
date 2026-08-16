@@ -11,8 +11,6 @@ tags:
 categories:
   - Many WHYs
 ---
-# CPU Cache Line: Why Does a 64-Byte Block Matter?
-
 Many engineers know:
 
 > CPU has cache because memory is slow.

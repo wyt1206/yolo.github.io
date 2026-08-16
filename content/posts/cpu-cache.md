@@ -11,8 +11,6 @@ tags:
 categories:
   - Many WHYs
 ---
-# CPU Cache: The Small Warehouse Inside the CPU
-
 When we write programs, we often think:
 
 ```
@@ -40,7 +38,6 @@ This leads to a chain of questions:
 ```
 
 What is CPU Cache?
-
 ```
 
     |
